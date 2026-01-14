@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>Tesla 九如旗艦大禮包</title>
+<style>
+body { font-family: Arial; padding:20px }
+h2 { margin-top:30px }
+.total { font-size:24px; color:#c00 }
+</style>
+</head>
+<body>
+
+<h1>Tesla 九如旗艦大禮包</h1>
+<p>基礎價格：$90,000</p>
+
+<h2>TPU 犀牛皮</h2>
+<select id="tpu" onchange="calc()">
+  <option value="0">量子膜 天穹（+0）</option>
+  <option value="10000">領路者 亮面（+10000）</option>
+  <option value="15000">領路者 消光（+15000）</option>
+  <option value="25000">改色犀牛皮（+25000 起）</option>
+</select>
+
+<h2>隔熱紙（不含天窗）</h2>
+<select id="film" onchange="calc()">
+  <option value="0">量子膜 酷黑（+0）</option>
+  <option value="7000">量子膜 幻影（+7000）</option>
+  <option value="12000">量子膜 ZX（+12000）</option>
+  <option value="15000">3M 極透（+15000）</option>
+</select>
+
+<h2>贈品（二）任選二</h2>
+<div id="gifts">
+<label><input type="checkbox" onclick="limitGift(this)">前後螢幕貼</label><br>
+<label><input type="checkbox" onclick="limitGift(this)">前保桿防蟲網</label><br>
+<label><input type="checkbox" onclick="limitGift(this)">前進氣濾網</label><br>
+<label><input type="checkbox" onclick="limitGift(this)">前座椅下護網</label><br>
+<label><input type="checkbox" onclick="limitGift(this)">後座掛勾</label><br>
+<label><input type="checkbox" onclick="limitGift(this)">牌框式 eTag</label><br>
+<label><input type="checkbox" onclick="limitGift(this)">貼紙式 eTag</label><br>
+<label><input type="checkbox" onclick="limitGift(this)">安全拉繩（二入）</label><br>
+<label><input type="checkbox" onclick="limitGift(this)">前二車門迎賓燈</label><br>
+<label><input type="checkbox" onclick="limitGift(this)">手套箱掛勾</label>
+</div>
+
+<h2 class="total">總價：$<span id="total">90000</span></h2>
+
+<script>
+function calc(){
+  let base = 90000;
+  let tpu = Number(document.getElementById("tpu").value);
+  let film = Number(document.getElementById("film").value);
+  document.getElementById("total").innerText = base + tpu + film;
+}
+
+function limitGift(cb){
+  let checked = document.querySelectorAll('#gifts input:checked');
+  if(checked.length > 2){
+    cb.checked = false;
+    alert("贈品最多只能選 2 樣");
+  }
+}
+</script>
+
+</body>
+</html>
