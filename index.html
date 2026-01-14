@@ -3,16 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <title>Tesla 九如旗艦大禮包</title>
+
 <style>
-body { font-family: Arial; padding:20px }
-h2 { margin-top:30px }
-.total { font-size:24px; color:#c00 }
+body {
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.total {
+  font-size: 28px;
+  color: #c00;
+  margin-top: 30px;
+}
 </style>
 </head>
+
 <body>
+<div class="container">
 
 <h1>Tesla 九如旗艦大禮包</h1>
-<p>基礎價格：$90,000</p>
+<p style="text-align:center">基礎價格：$90,000</p>
 
 <h2>TPU 犀牛皮</h2>
 <select id="tpu" onchange="calc()">
@@ -32,19 +63,23 @@ h2 { margin-top:30px }
 
 <h2>贈品（二）任選二</h2>
 <div id="gifts">
-<label><input type="checkbox" onclick="limitGift(this)">前後螢幕貼</label><br>
-<label><input type="checkbox" onclick="limitGift(this)">前保桿防蟲網</label><br>
-<label><input type="checkbox" onclick="limitGift(this)">前進氣濾網</label><br>
-<label><input type="checkbox" onclick="limitGift(this)">前座椅下護網</label><br>
-<label><input type="checkbox" onclick="limitGift(this)">後座掛勾</label><br>
-<label><input type="checkbox" onclick="limitGift(this)">牌框式 eTag</label><br>
-<label><input type="checkbox" onclick="limitGift(this)">貼紙式 eTag</label><br>
-<label><input type="checkbox" onclick="limitGift(this)">安全拉繩（二入）</label><br>
-<label><input type="checkbox" onclick="limitGift(this)">前二車門迎賓燈</label><br>
-<label><input type="checkbox" onclick="limitGift(this)">手套箱掛勾</label>
+<label><input type="checkbox" onclick="limitGift(this)"> 前後螢幕貼</label><br>
+<label><input type="checkbox" onclick="limitGift(this)"> 前保桿防蟲網</label><br>
+<label><input type="checkbox" onclick="limitGift(this)"> 前進氣濾網</label><br>
+<label><input type="checkbox" onclick="limitGift(this)"> 前座椅下護網</label><br>
+<label><input type="checkbox" onclick="limitGift(this)"> 後座掛勾</label><br>
+<label><input type="checkbox" onclick="limitGift(this)"> 牌框式 eTag</label><br>
+<label><input type="checkbox" onclick="limitGift(this)"> 貼紙式 eTag</label><br>
+<label><input type="checkbox" onclick="limitGift(this)"> 安全拉繩（二入）</label><br>
+<label><input type="checkbox" onclick="limitGift(this)"> 前二車門迎賓燈</label><br>
+<label><input type="checkbox" onclick="limitGift(this)"> 手套箱掛勾</label>
 </div>
 
-<h2 class="total">總價：$<span id="total">90000</span></h2>
+<h2 class="total">
+  總價：$<span id="total">90000</span>
+</h2>
+
+</div>
 
 <script>
 function calc(){
